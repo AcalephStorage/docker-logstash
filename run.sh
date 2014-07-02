@@ -37,9 +37,9 @@ filter {
   }
 }
 output {
-  stdout {
-      codec => "json"
-  }
+  #stdout {
+  #    codec => "json"
+  #}
 
   elasticsearch {
       embedded => $EMBEDDED
