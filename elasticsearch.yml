@@ -166,6 +166,9 @@ index.number_of_replicas: 0
 #
 #path.plugins: /path/to/plugins
 
+path:
+  logs: /data/log
+  data: /data/data
 
 #################################### Plugin ###################################
 

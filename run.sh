@@ -8,7 +8,7 @@ if [ "$ES_HOST" = "127.0.0.1" ] ; then
     EMBEDDED="true"
 fi
 
-cat << EOF > /opt/logstash/etc/logstash.conf
+cat << EOF > /opt/logstash.conf
 input {
   syslog {
     type => syslog
@@ -51,7 +51,7 @@ output {
 EOF
 
 # Install marvel monitoring plugin
-/opt/logstash/bin/plugin -install elasticsearch/marvel/latest
+# /opt/logstash/bin/plugin -install elasticsearch/marvel/latest
 
-/opt/logstash/bin/logstash agent -f /opt/logstash/etc/logstash.conf -- web
+/opt/logstash/bin/logstash agent -f /opt/logstash.conf -- web
 
