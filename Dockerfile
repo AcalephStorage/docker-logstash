@@ -5,7 +5,7 @@
 #   external ES:
 #     sudo docker run -d -e ES_HOST=<ES_HOST> -e ES_PORT=<ES_PORT> -p 5043:5043 -p 514:514 -p 9200:9200 -p 9292:9292 -p 9300:9300 acaleph/logstash
 
-FROM ubuntu:precise
+FROM ubuntu:trusty
 MAINTAINER acaleph "admin@acale.ph"
 
 # Ensure UTF-8
@@ -23,7 +23,7 @@ ENV ELASTICWORKERS 1
 # Make sure jRuby is installed
 ENV USE_JRUBY 1
 
-RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ precise universe' >> /etc/apt/sources.list
+RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ trusty universe' >> /etc/apt/sources.list
 RUN apt-get update
 
 # A hack to fix fuse issue with Java 7
